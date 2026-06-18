@@ -100,7 +100,7 @@
   .btn-ghost{background:var(--card);border:1px solid var(--line);color:var(--ink)}
 
   /* ---------- Section base ---------- */
-  section{padding:60px 0}
+  section{padding:60px 0;scroll-margin-top:62px}
   .sec-label{font-size:14px;font-weight:700;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;margin-bottom:12px}
   .sec-title{font-size:clamp(26px,6.6vw,42px);font-weight:800;line-height:1.25;letter-spacing:-.01em}
   .sec-desc{font-size:clamp(16px,4.2vw,19px);color:var(--ink-soft);margin-top:16px;max-width:680px}
@@ -251,13 +251,13 @@
 
 <header>
   <div class="wrap nav">
-    <div class="logo"><b>DUOBLADE</b></div>
+    <a href="#hero" class="logo" aria-label="홈으로 이동"><b>DUOBLADE</b></a>
     <a href="#contact" class="nav-cta">도입 문의</a>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="wrap">
     <div class="hero-flex">
       <div>
