@@ -8,29 +8,35 @@
 ## 구성
 
 ```
-docs/
-├── index.html        # 웹 제안서 (HTML/CSS/JS 단일 파일)
-└── images/
-    ├── hero.png      # 메인 히어로 배너
-    ├── device-or.png # 수술실 사용 이미지
-    └── lineup.png    # 제품 4종 라인업
+├── index.html            # 웹 제안서 (HTML/CSS/JS 단일 파일)
+└── assets/
+    └── images/
+        ├── hero.png      # 메인 히어로 배너
+        ├── device-or.png # 수술실 사용 이미지
+        └── lineup.png    # 제품 4종 라인업
 ```
 
 ## 로컬에서 보기
 
-`docs/index.html` 파일을 브라우저로 바로 열면 됩니다.
+`index.html` 파일을 브라우저로 바로 열면 됩니다.
 또는 간단한 정적 서버로:
 
 ```bash
-npx serve docs
+npx serve .
 ```
 
 ## GitHub Pages 배포
 
 1. 이 저장소에 푸시합니다.
 2. GitHub → **Settings → Pages**
-3. **Source: Deploy from a branch** → Branch: `main` / 폴더: `/docs` 선택 후 저장
+3. **Source: Deploy from a branch** → Branch: `main` / 폴더: `/(root)` 선택 후 저장
 4. 잠시 후 `https://value-oreum.github.io/Duoblade/` 에서 공개됩니다.
+
+## Vercel 배포
+
+- Framework Preset: `Other`
+- Build Command: 비움
+- Output Directory: 비움
 
 ## 문의
 

@@ -4,7 +4,7 @@
     {
       "name": "duoblade",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "serve", "docs", "-l", "4399"],
+      "runtimeArgs": ["--yes", "serve", ".", "-l", "4399"],
       "port": 4399
     }
   ]
