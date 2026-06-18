@@ -1,0 +1,14 @@
+# 원본 소스 / 제안서 파일 (웹 제안서 저장소에는 미포함)
+*.pptx
+*.pdf
+duoblade.png
+main.png
+
+# 작업 임시 파일
+extract_pptx/
+*_text.txt
+pdf_out.txt
+
+# OS
+Thumbs.db
+.DS_Store
