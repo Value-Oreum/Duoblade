@@ -81,10 +81,24 @@
     font-size:clamp(17px,4.4vw,21px);color:var(--ink-soft);max-width:620px;margin-bottom:26px;
   }
   .hero p.lead b{color:var(--ink);font-weight:700}
-  .hero-img{
-    margin:6px -22px 0;position:relative;
-  }
-  .hero-img img{width:100%;border-radius:0}
+  .hero-img{margin:10px -8px 0;position:relative}
+  .hero-img::before{content:"";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);
+    width:90%;height:80%;border-radius:50%;z-index:0;
+    background:radial-gradient(closest-side,rgba(55,198,244,.30),rgba(47,125,255,.12),transparent 75%);
+    filter:blur(6px)}
+  .hero-img img{position:relative;z-index:1;width:100%;
+    filter:drop-shadow(0 22px 38px rgba(0,0,0,.55))}
+  /* Product showcase (transparent render on dark theme) */
+  .product-showcase{position:relative;margin-top:32px;padding:8px}
+  .product-showcase::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:84%;height:82%;border-radius:50%;z-index:0;
+    background:radial-gradient(closest-side,rgba(47,125,255,.22),rgba(55,198,244,.10),transparent 75%);
+    filter:blur(8px)}
+  .product-showcase img{position:relative;z-index:1;width:100%;
+    filter:drop-shadow(0 18px 34px rgba(0,0,0,.5))}
+  .product-showcase .cap{position:relative;z-index:1;text-align:center;margin-top:14px;
+    font-size:15px;color:var(--ink-soft)}
+  .product-showcase .cap b{color:var(--cyan-soft);font-weight:700}
   .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 4px}
   .chip{
     display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;
@@ -228,7 +242,7 @@
     .wrap{padding:0 32px}
     section{padding:84px 0}
     .hero{padding:54px 0 0}
-    .hero-img{margin:18px 0 0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-img{margin:18px 0 0}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     .grid.cols-2{grid-template-columns:1fr 1fr}
     .stat-grid{grid-template-columns:repeat(4,1fr)}
@@ -265,7 +279,7 @@
         <h1>동물 수술실에도<br><span class="grad-text">더 안전한 전기수술</span>의<br>기준이 필요합니다</h1>
         <p class="lead"><b>DUOBLADE</b>는 100℃ 이하 저온 전기수술 기술로<br>조직 손상·수술 연기·출혈 부담을 줄이는<br>수의병원 맞춤 안전 수술 솔루션입니다.</p>
         <div class="hero-chips">
-          <div class="chip"><span class="n">&lt;100℃</span> 저온 수술</div>
+          <div class="chip"><span class="n">100℃ 이하</span> 저온 수술</div>
           <div class="chip"><span class="n">95%</span> 출혈 저감</div>
           <div class="chip"><span class="n">3 Pin</span> 즉시 호환</div>
         </div>
@@ -275,7 +289,10 @@
         </div>
       </div>
       <div class="hero-img reveal">
-        <img src="assets/images/device-or.png" alt="수술실에서 사용 중인 DUOBLADE 저온 전기수술기" width="595" height="560" />
+        <picture>
+          <source srcset="assets/images/device-hand.webp" type="image/webp" />
+          <img src="assets/images/device-hand.png" alt="수술용 장갑을 낀 손으로 잡은 DUOBLADE 저온 전기수술기" width="1400" height="951" />
+        </picture>
       </div>
     </div>
   </div>
@@ -314,6 +331,13 @@
       <div class="feat reveal"><div class="ic">🔌</div><h3>간편 연결</h3><p>기존 수술실 장비에 그대로 연결 (3 Pin 호환)</p></div>
       <div class="feat reveal"><div class="ic">✨</div><h3>추가 장비 불필요</h3><p>별도 고가 제너레이터 없이 바로 사용</p></div>
     </div>
+    <div class="product-showcase reveal">
+      <picture>
+        <source srcset="assets/images/device-full.webp" type="image/webp" />
+        <img src="assets/images/device-full.png" alt="DUOBLADE 본체와 연기 흡기 튜브, 3 Pin 커넥터 전체 구성" width="1400" height="905" />
+      </picture>
+      <div class="cap">스마트 <b>연기 흡기 튜브</b>와 <b>3 Pin 커넥터</b> — 기존 수술 장비에 그대로 연결</div>
+    </div>
     <div class="tech-note reveal">세계 최초 <b>‘초고밀도 유전 가열’</b> 기술을 적용해, 별도 제어 없이 블레이드 자체가 최적의 수술 온도를 만듭니다.</div>
   </div>
 </section>
@@ -326,12 +350,12 @@
       <h2 class="sec-title">DUOBLADE의 차이는<br><span class="accent">숫자로</span> 나타납니다</h2>
     </div>
     <div class="stat-grid">
-      <div class="stat reveal"><div class="big">&lt;100<span class="unit">℃</span></div><div class="cap">안전한 저온<br>수술 동작 온도</div></div>
+      <div class="stat reveal"><div class="big">≤100<span class="unit">℃</span></div><div class="cap">안전한 저온<br>수술 동작 온도</div></div>
       <div class="stat reveal"><div class="big">70<span class="unit">%</span></div><div class="cap">조직 손상 개선<br>(그을림·괴사)</div></div>
       <div class="stat reveal"><div class="big">80<span class="unit">%</span></div><div class="cap">유해 수술 연기<br>개선</div></div>
       <div class="stat reveal"><div class="big">95<span class="unit">%</span></div><div class="cap">출혈량 저감<br>(Scalpel 대비)</div></div>
     </div>
-    <p class="fineprint reveal">※ 제조사 제품 시험 기준 수치이며, 인체 의료기기 자료입니다. 수의 임상 적용 수치는 별도 확인이 필요합니다.</p>
+    <p class="fineprint reveal">※ 제조사 제품 시험 기준 수치이며, 동물 모델(돼지) In vivo 전임상 시험 수행 자료입니다. 수의 임상 적용 수치는 별도 확인이 필요합니다.</p>
   </div>
 </section>
 
@@ -421,10 +445,10 @@
         <img src="assets/images/lineup.png" alt="DUOBLADE 제품 4종 라인업" width="520" height="850" />
       </div>
       <div class="models reveal">
-        <div class="model"><div class="name">DUOBLADE PRO</div><div class="code">DB1SEP</div><div class="desc">연기 흡기 + 360° 회전 샤프트</div></div>
-        <div class="model"><div class="name">DUOBLADE PLUS-TR</div><div class="code">DB1SP</div><div class="desc">슬림 그립 · 손목 피로 감소</div></div>
-        <div class="model"><div class="name">DUOBLADE PLUS-SE</div><div class="code">DB1EP</div><div class="desc">길이 연장형 · 환부 접근성 개선</div></div>
-        <div class="model"><div class="name">DUOBLADE ESSENSE</div><div class="code">DB1P</div><div class="desc">기본형 · 저온 절개 + 지혈</div></div>
+        <div class="model"><div class="name">DUOBLADE PRO</div><div class="code">DB1SEP</div><div class="desc">연기 흡기 · 길이 연장 · 360° 회전까지, 모든 편의성을 담은 올인원 제품</div></div>
+        <div class="model"><div class="name">DUOBLADE PLUS-TR</div><div class="code">DB1SP</div><div class="desc">길이 연장형, 환부 접근성에 집중</div></div>
+        <div class="model"><div class="name">DUOBLADE PLUS-SE</div><div class="code">DB1EP</div><div class="desc">연기 흡입 탑재, 맑은 시야에 집중</div></div>
+        <div class="model"><div class="name">DUOBLADE ESSENSE</div><div class="code">DB1P</div><div class="desc">기본형, 가벼운 그립과 정확한 절개</div></div>
       </div>
     </div>
   </div>
@@ -500,7 +524,7 @@
       <a href="mailto:echa.value@gmail.com" class="cinfo"><span class="l">이메일</span><span>echa.value@gmail.com</span></a>
       <a href="tel:01026750418" class="call-btn">📞 지금 전화로 상담하기</a>
     </div>
-    <p class="makers">제조사 <b>㈜크레센</b> &nbsp;·&nbsp; 공급문의 <b>오름㈜</b></p>
+    <p class="makers">판매사 <b>㈜크레센</b> &nbsp;·&nbsp; 공급문의 <b>오름㈜</b></p>
   </div>
 </section>
 
