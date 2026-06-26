@@ -188,7 +188,9 @@
   .area h3{font-size:17px;font-weight:700}
 
   /* ---------- Lineup ---------- */
-  .lineup-img{background:#fff;border-radius:var(--radius);padding:22px 16px;margin-top:30px;box-shadow:var(--shadow)}
+  .lineup-img{position:relative;margin-top:30px}
+  .lineup-img img{width:100%;max-width:340px;height:auto;margin:0 auto;display:block;
+    filter:drop-shadow(0 16px 32px rgba(0,0,0,.5))}
   .models{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
   .model{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
   .model .name{font-weight:800;font-size:17px}
@@ -442,7 +444,10 @@
     </div>
     <div class="lineup-wrap">
       <div class="lineup-img reveal">
-        <img src="assets/images/lineup.png" alt="DUOBLADE 제품 4종 라인업" width="520" height="850" />
+        <picture>
+          <source srcset="assets/images/lineup.webp" type="image/webp" />
+          <img src="assets/images/lineup.png" alt="DUOBLADE 제품 4종 라인업" width="673" height="1125" />
+        </picture>
       </div>
       <div class="models reveal">
         <div class="model"><div class="name">DUOBLADE PRO</div><div class="code">DB1SEP</div><div class="desc">연기 흡기 · 길이 연장 · 360° 회전까지, 모든 편의성을 담은 올인원 제품</div></div>
